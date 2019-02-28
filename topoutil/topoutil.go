@@ -72,13 +72,13 @@ func NewNumberSource(first, last int, t topo.Topo) (<-chan topo.Mesg, error) {
 	return out, nil
 }
 
-// NewMeetup creates a channel of messages sourced from meetup.com's public stream.
+// NewMeetupSource creates a channel of messages sourced from meetup.com's public stream.
 // More info at: http://www.meetup.com/meetup_api/docs/stream/2/rsvps/
 func NewMeetupSource(t topo.Topo) (<-chan topo.Mesg, error) {
 	return NewChunkedHttpSource("http://stream.meetup.com/2/rsvps", t, "meetup")
 }
 
-// NewUsaGov creates a channel of messages sourced from USA.gov's public stream of bit.ly clicks.
+// NewUsaGovSource creates a channel of messages sourced from USA.gov's public stream of bit.ly clicks.
 // More info at: http://www.usa.gov/About/developer-resources/1usagov.shtml
 func NewUsaGovSource(t topo.Topo) (<-chan topo.Mesg, error) {
 	return NewChunkedHttpSource("http://developer.usa.gov/1usagov", t, "usagov")
